@@ -164,7 +164,7 @@ sds sdsdup(const sds s) {
 /* Free an sds string. No operation is performed if 's' is NULL. */
 void sdsfree(sds s) {
     if (s == NULL) return;
-    s_free((char*)s-sdsHdrSize(s[-1]));
+    s_free((char*)s-sdsHdrSize(s[-1])); // s_free 就是 zfree
 }
 
 /* Set the sds string length to the length as obtained with strlen(), so
@@ -927,7 +927,7 @@ int hex_digit_to_int(char c) {
     case '7': return 7;
     case '8': return 8;
     case '9': return 9;
-    case 'a': case 'A': return 10;
+    case 'a': case 'A': return 10; // 学会了
     case 'b': case 'B': return 11;
     case 'c': case 'C': return 12;
     case 'd': case 'D': return 13;

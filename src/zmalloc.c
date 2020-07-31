@@ -202,10 +202,10 @@ void zfree(void *ptr) {
     update_zmalloc_stat_free(zmalloc_size(ptr));
     free(ptr);
 #else
-    realptr = (char*)ptr-PREFIX_SIZE;
+    realptr = (char*)ptr-PREFIX_SIZE; // ?
     oldsize = *((size_t*)realptr);
     update_zmalloc_stat_free(oldsize+PREFIX_SIZE);
-    free(realptr);
+    free(realptr); // ?
 #endif
 }
 
