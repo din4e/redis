@@ -63,7 +63,7 @@ struct sharedObjectsStruct shared;
 /* Global vars that are actually used as constants. The following double
  * values are used for double on-disk serialization, and are initialized
  * at runtime to avoid strange compiler optimizations. */
-
+/* 浮点数常量，后续会初始化 */
 double R_Zero, R_PosInf, R_NegInf, R_Nan;
 
 /*================================= Globals ================================= */
